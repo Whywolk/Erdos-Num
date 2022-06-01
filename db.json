@@ -1,0 +1,39 @@
+[
+	{
+		"title" : "Newtonian Forms of Prime Factors",
+		"scientists" : [
+		{"name" : "M. Smith"},
+		{"name" : "G. Martin"},
+		{"name" : "P. Erdos"}
+		]
+	},
+	{
+		"title" : "Stuttering in Petri Nets",
+		"scientists" : [
+		{"name" : "P. Erdos"},
+		{"name" : "W. Reisig"}
+		]
+	},
+	{
+		"title" : "First Order Derivates in Structured Programming",
+		"scientists" : [
+		{"name" : "M. Smith"},
+		{"name" : "X. Chen"}
+		]
+	},
+	{
+		"title" : "Selfstabilizing Data Structures",
+		"scientists" : [
+		{"name" : "T. Jablonski"},
+		{"name" : "Z. Hsueh"}
+		]
+	},
+	{
+		"title" : "Prime Numbers and Beyond",
+		"scientists" : [
+		{"name" : "X. Chen"},
+		{"name" : "L. Li"}
+		]
+	}
+]
+
