@@ -1,7 +1,7 @@
 data Scientist 	 	= Sc String
-newtype Database 	= Db [([Scientist], PaperTitle)]
-type PaperTitle  	= String
-type Path 		= [Scientist]
+newtype Database 	= Db [([Scientist], Title)]
+type Title  	    = String
+type Path 		    = [Scientist]
 
 instance Eq Scientist where
 	(Sc name1) == (Sc name2) = (name1 == name2)
@@ -9,12 +9,6 @@ instance Eq Scientist where
 instance Show Scientist where
 	show (Sc name) = show name
 
-db = Db [
-    ([Sc "M. Smith", Sc "G. Martin", Sc "P. Erdos"],"Newtonian Forms of Prime Factors"),
-	([Sc "P. Erdos", Sc "W. Reisig"], "Stuttering in Petri Nets"),
-	([Sc "M. Smith", Sc "X. Chen"], "First Order Derivates in Structured Programming"),
-	([Sc "T. Jablonski",Sc "Z. Hsueh"], "Selfstabilizing Data Structures"),
-	([Sc "X. Chen",Sc "L. Li"], "Prime Numbers and Beyond")]
 
 neighbours :: Database -> Scientist -> [Scientist]
 neighbours (Db []) _ = []
@@ -27,9 +21,9 @@ paths :: Database -> Scientist -> [Path]
 paths db start = paths' [] db start
 	where paths' visited db start
 		| start == (Sc "P. Erdos") = [[start]]
-		| start `notElem` visited   = [start:rest | next <- neighbours db start,
+		| start `notElem` visited = [start:rest | next <- neighbours db start,
 													rest <- paths' (start:visited) db next]
-		| otherwise		    = []
+		| otherwise = []
 
 get_erdos_num :: Database -> Scientist -> Int
 get_erdos_num db sc
